@@ -6,6 +6,8 @@
 package Principal;
 
 import Canonicas.Cartones;
+import Logica.LogicaCartones;
+import static Logica.LogicaCartones.PintarCartones;
 import static Logica.LogicaCartones.generarCartones;
 import java.util.ArrayList;
 
@@ -19,7 +21,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Cartones> cartones = new ArrayList<>();
+        /*ArrayList<Cartones> cartones = new ArrayList<>();
         cartones = generarCartones();
         for (int i = 0; i < cartones.size(); i++) {
             System.out.println("Carton " + cartones.get(i).getNumeroCarton());
@@ -28,7 +30,8 @@ public class Main {
                 System.out.print(cartones.get(i).getNumeros().get(j) + " ");
             }
             System.out.println("\n");
-        }
+        }*/
+        PintarCartones();
     }
 
 }
