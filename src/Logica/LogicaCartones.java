@@ -28,17 +28,16 @@ public class LogicaCartones {
     //Metodo que genera los 24 numeros de un solo cartón sin repeti
     public static ArrayList<NumeroLetra> obtenerNumerosCarton() {
         ArrayList<NumeroLetra> carton = new ArrayList<>();
-        ArrayList<Integer> n = new ArrayList<>();
         //Llenar B
-        LlenarLetraCarton(n, carton, 1, 18, 'B');
+        LlenarLetraCarton(carton, 1, 18, 'B');
         //Llenar I
-        LlenarLetraCarton(n, carton, 18, 36, 'I');
+        LlenarLetraCarton(carton, 18, 36, 'I');
         //Llenar N
-        LlenarLetraCarton(n, carton, 36, 54, 'N');
+        LlenarLetraCarton(carton, 36, 54, 'N');
         //Llenar G
-        LlenarLetraCarton(n, carton, 54, 72, 'G');
+        LlenarLetraCarton(carton, 54, 72, 'G');
         //Llenar O
-        LlenarLetraCarton(n, carton, 72, 91, 'O');
+        LlenarLetraCarton(carton, 72, 91, 'O');
         EliminarNumeroMitad(carton);
         return carton;
     }
@@ -51,13 +50,12 @@ public class LogicaCartones {
     }
     
     //Método que llena los números que corresponden a una letra
-    public static void LlenarLetraCarton(ArrayList<Integer> n, ArrayList<NumeroLetra> carton, int inf, int sup, char letra){
+    public static void LlenarLetraCarton(ArrayList<NumeroLetra> carton, int inf, int sup, char letra){
         int i = 0, num;
         while (i < 5) {
             num = RandomNumeros(inf, sup);
             NumeroLetra aux = new NumeroLetra(num, letra);
-            if (!n.contains(num)) {
-                n.add(num);
+            if (!carton.contains(aux)) {
                 carton.add(aux);
                 i++;
             }

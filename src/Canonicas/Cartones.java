@@ -6,6 +6,7 @@
 package Canonicas;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Cartones {
 
@@ -14,6 +15,43 @@ public class Cartones {
     private char Letra;
     private String CodigoRegistro;
     private boolean Seleccion;
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.CodigoRegistro);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cartones other = (Cartones) obj;
+        if (this.numeroCarton != other.numeroCarton) {
+            return false;
+        }
+        if (this.Letra != other.Letra) {
+            return false;
+        }
+        if (this.Seleccion != other.Seleccion) {
+            return false;
+        }
+        if (!Objects.equals(this.CodigoRegistro, other.CodigoRegistro)) {
+            return false;
+        }
+        if (!Objects.equals(this.numeros, other.numeros)) {
+            return false;
+        }
+        return true;
+    }
 
     public int getNumeroCarton() {
         return numeroCarton;
